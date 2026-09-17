@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package agentos;
+
+service AgentService {
+  rpc Handshake (HandshakeRequest) returns (HandshakeResponse);
+  rpc Negotiate (NegotiateRequest) returns (NegotiateResponse);
+  rpc StreamTaskData (stream DataChunk) returns (stream DataChunkResponse);
+}
+
+message HandshakeRequest {
+  string consumer_did = 1;
+  string signature = 2;
+  string capability_required = 3;
+}
+
+message HandshakeResponse {
+  bool accepted = 1;
+  string provider_did = 2;
+  string message = 3;
+}
+
+message NegotiateRequest {
+  string consumer_did = 1;
+  string capability = 2;
+  double offered_price = 3;
+  int32 round = 4;
+  string signature = 5;
+}
+
+message NegotiateResponse {
+  enum NegotiationStatus {
+    ACCEPTED = 0;
+    COUNTER_OFFER = 1;
+    REJECTED = 2;
+  }
+  NegotiationStatus status = 1;
+  double counter_price = 2;
+  string ai_reasoning = 3;
+  string signature = 4;
+}
+
+message DataChunk {
+  string session_id = 1;
+  int32 sequence_number = 2;
+  bytes payload = 3;
+  string signature = 4;
+}
+
+message DataChunkResponse {
+  string session_id = 1;
+  int32 sequence_number = 2;
+  bool acknowledged = 3;
+  string status_message = 4;
+}
