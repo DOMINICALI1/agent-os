@@ -1,4 +1,11 @@
-<img width="480" height="258" alt="gif" src="https://github.com/user-attachments/assets/a61e4da8-0e5d-4c7b-8394-6ba46cb68daa" />
+<img width="480" height="258" alt="gif" src="https://github.com/user-attachments/assets/51b15ef2-15ae-4dee-b8e7-d6c986ee7421" />
+
+
+
+
+
+
+
 
 We are live on Product Hunt today! Support us https://www.producthunt.com/products/agent-os-3
 # Agent OS SDK
