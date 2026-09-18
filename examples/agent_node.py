@@ -1,6 +1,6 @@
 import time
-from identity import AgentIdentity
-from discovery import DiscoveryRegistry
+from agentos.identity import AgentIdentity
+from agentos.discovery import DiscoveryRegistry
 
 class AgentNode:
     """

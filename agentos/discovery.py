@@ -1,6 +1,6 @@
 import time
 from typing import Dict, List, Optional
-from identity import AgentIdentity
+from agentos.identity import AgentIdentity
 
 class DiscoveryRegistry:
     """

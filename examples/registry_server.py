@@ -3,7 +3,7 @@ from typing import Dict, List, Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import uvicorn
-from identity import AgentIdentity
+from agentos.identity import AgentIdentity
 
 app = FastAPI(title="Agent OS Discovery Registry")
 

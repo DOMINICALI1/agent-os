@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import httpx
 import uvicorn
-from identity import AgentIdentity
+from agentos.identity import AgentIdentity
 
 # Identity & Configuration
 provider_identity = AgentIdentity()

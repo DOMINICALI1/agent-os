@@ -1,6 +1,6 @@
 import time
 import httpx
-from identity import AgentIdentity
+from agentos.identity import AgentIdentity
 
 REGISTRY_URL = "http://127.0.0.1:8000"
 
