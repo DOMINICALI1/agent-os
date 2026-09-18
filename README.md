@@ -1,4 +1,4 @@
-```markdown
+We are live on Product Hunt today! Support us https://www.producthunt.com/products/agent-os-3?utm_source=other&utm_medium=social
 # Agent OS SDK
 
 A decentralized, high-performance protocol designed for autonomous AI agent identification, dynamic multi-round negotiation, and encrypted data streaming.
