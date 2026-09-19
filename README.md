@@ -1,29 +1,32 @@
 <img width="480" height="258" alt="gif" src="https://github.com/user-attachments/assets/7909270c-d060-4e34-a3f3-6f8becbf34ba" />
 
 support on https://www.producthunt.com/products/agent-os-3
+# AgentOS Network (`agentos-net`)
 
-AgentOS Network (agentos-net)
-Open-Source Infrastructure for Secure, Low-Latency Agent-to-Agent Interoperability & Financial Settlement.
+> **Open-Source Infrastructure for Secure, Low-Latency Agent-to-Agent Interoperability & Financial Settlement.**
 
-agentos-net is a lightweight, framework-agnostic protocol built on gRPC and Ed25519 Cryptographic DIDs (Decentralized Identifiers). It empowers autonomous AI agents created across different frameworks (CrewAI, LangChain, Ollama, AutoGen) to discover, negotiate, execute tasks, and settle payments with zero vendor lock-in.
+`agentos-net` is a lightweight, framework-agnostic protocol built on **gRPC** and **Ed25519 Cryptographic DIDs** (Decentralized Identifiers). It empowers autonomous AI agents created across different frameworks (CrewAI, LangChain, Ollama, AutoGen) to discover, negotiate, execute tasks, and settle payments with zero vendor lock-in.
 
-Key Features
-Framework-Agnostic Communication: Connect local or distributed agents regardless of their underlying stack.
+---
 
-High-Performance gRPC Transport: Binary serialization ensuring sub-millisecond execution handshakes.
+## Key Features
 
-Cryptographic Identities (DIDs): Ed25519 keypairs for verifiable payload signatures and tamper-proof authentication.
+- **Framework-Agnostic Communication:** Connect local or distributed agents regardless of their underlying stack.
+- **High-Performance gRPC Transport:** Binary serialization ensuring sub-millisecond execution handshakes.
+- **Cryptographic Identities (`DIDs`):** Ed25519 keypairs for verifiable payload signatures and tamper-proof authentication.
+- **Autonomous Payment Layer:** Integrated negotiation specification supporting Crypto Escrow (Solana/EVM) and Fiat (Stripe) settlement modes.
+- **Local-First & Privacy-Preserving:** Operates seamlessly on local networks without mandatory external server dependencies.
 
-Autonomous Payment Layer: Integrated negotiation specification supporting Crypto Escrow (Solana/EVM) and Fiat (Stripe) settlement modes.
+---
 
-Local-First & Privacy-Preserving: Operates seamlessly on local networks without mandatory external server dependencies.
+## Quick Start
 
-Quick Start
-1. Installation
+### 1. Installation
+
 Clone the repository and install the dependencies:
 
-Bash
-git clone https://github.com/DOMINICALI1/agent-os.git
+```bash
+git clone [https://github.com/DOMINICALI1/agent-os.git](https://github.com/DOMINICALI1/agent-os.git)
 cd agent-os
 pip install -r requirements.txt
 2. Running Local Examples
@@ -67,8 +70,6 @@ Roadmap
 [x] CrewAI & Local Ollama Integration Specifications
 
 [x] Payment Settlement Protocol Schema
-dominicaliroth@gmail.com
-
 
 [ ] Hosted Agent Registry (Global Agent DNS)
 
@@ -76,3 +77,4 @@ dominicaliroth@gmail.com
 
 License
 Distributed under the MIT License. See LICENSE for more information.
+dominicaliroth@gmail.com
