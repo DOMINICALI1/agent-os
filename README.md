@@ -1,4 +1,5 @@
-<img width="480" height="258" alt="image" src="https://github.com/user-attachments/assets/1f2ce46c-aee5-422f-8ec4-9b0d42704291" />
+<img width="480" height="258" alt="image" src="https://github.com/user-attachments/assets/5438f2f5-29cd-41f8-901a-7f9b50f7bd3d" />
+
 
 support on https://www.producthunt.com/products/agent-os-3
 # Agent OS SDK
