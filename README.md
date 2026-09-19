@@ -29,6 +29,8 @@ Clone the repository and install the dependencies:
 git clone [https://github.com/DOMINICALI1/agent-os.git](https://github.com/DOMINICALI1/agent-os.git)
 cd agent-os
 pip install -r requirements.txt
+
+
 2. Running Local Examples
 We provide end-to-end integration examples in the examples/ directory:
 
