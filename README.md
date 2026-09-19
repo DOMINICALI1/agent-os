@@ -1,4 +1,4 @@
-<img width="480" height="258" alt="image" src="https://github.com/user-attachments/assets/5438f2f5-29cd-41f8-901a-7f9b50f7bd3d" />
+<img width="480" height="258" alt="gif" src="https://github.com/user-attachments/assets/7909270c-d060-4e34-a3f3-6f8becbf34ba" />
 
 
 support on https://www.producthunt.com/products/agent-os-3
