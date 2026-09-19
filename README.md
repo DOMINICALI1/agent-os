@@ -67,6 +67,8 @@ Roadmap
 [x] CrewAI & Local Ollama Integration Specifications
 
 [x] Payment Settlement Protocol Schema
+dominicaliroth@gmail.com
+
 
 [ ] Hosted Agent Registry (Global Agent DNS)
 
