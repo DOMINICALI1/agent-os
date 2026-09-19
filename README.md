@@ -1,68 +1,76 @@
 <img width="480" height="258" alt="gif" src="https://github.com/user-attachments/assets/7909270c-d060-4e34-a3f3-6f8becbf34ba" />
 
-
 support on https://www.producthunt.com/products/agent-os-3
-# Agent OS SDK
 
-A decentralized, high-performance protocol designed for autonomous AI agent identification, dynamic multi-round negotiation, and encrypted data streaming.
+AgentOS Network (agentos-net)
+Open-Source Infrastructure for Secure, Low-Latency Agent-to-Agent Interoperability & Financial Settlement.
 
-## Features
+agentos-net is a lightweight, framework-agnostic protocol built on gRPC and Ed25519 Cryptographic DIDs (Decentralized Identifiers). It empowers autonomous AI agents created across different frameworks (CrewAI, LangChain, Ollama, AutoGen) to discover, negotiate, execute tasks, and settle payments with zero vendor lock-in.
 
-- **Cryptographic Identity**: Ed25519-based Decentralized Identifiers (DIDs) for verifiable agent identity and signatures.
-- **Dynamic Negotiation Protocol**: Multi-round counter-offer bargaining model for automated price discovery.
-- **High-Performance Streaming**: Bidirectional gRPC streaming powered by HTTP/2 for low-latency payload delivery.
-- **Open-Core & Framework Agnostic**: Designed to integrate seamlessly with any LLM framework or local AI runtime (e.g., Ollama, PyTorch, LangChain).
+Key Features
+Framework-Agnostic Communication: Connect local or distributed agents regardless of their underlying stack.
 
-## Installation
+High-Performance gRPC Transport: Binary serialization ensuring sub-millisecond execution handshakes.
 
-Install the package in editable mode locally:
+Cryptographic Identities (DIDs): Ed25519 keypairs for verifiable payload signatures and tamper-proof authentication.
 
-```bash
-pip install -e .
+Autonomous Payment Layer: Integrated negotiation specification supporting Crypto Escrow (Solana/EVM) and Fiat (Stripe) settlement modes.
 
-```
+Local-First & Privacy-Preserving: Operates seamlessly on local networks without mandatory external server dependencies.
 
-Or build the wheel package for distribution:
+Quick Start
+1. Installation
+Clone the repository and install the dependencies:
 
-```bash
-python setup.py sdist bdist_wheel
+Bash
+git clone https://github.com/DOMINICALI1/agent-os.git
+cd agent-os
+pip install -r requirements.txt
+2. Running Local Examples
+We provide end-to-end integration examples in the examples/ directory:
 
-```
+CrewAI Orchestration:
 
-## Quick Start
+Bash
+python examples/crewai_integration.py
+Local Ollama Inference Node:
 
-### 1. Provider Node
+Bash
+python examples/ollama_local_agent.py
+Autonomous Payment Negotiation:
 
-```python
-from agentos import AgentNode
+Bash
+python examples/payment_negotiation.py
+Architecture Overview
+Plaintext
++-----------------------+               +-----------------------+
+|   CrewAI / LangChain  |               |  Local Ollama Agent   |
+| (Client / Task Owner) |               |  (Provider / Worker)  |
++-----------+-----------+               +-----------+-----------+
+            |                                       |
+            +------------[ gRPC + Ed25519 ]---------+
+                        |
+            [ Settlement / Escrow Engine ]
+                        |
+            (Solana / Base / Stripe Fiat)
+Handshake: Agents exchange public keys (did:agentos:...) and verify identity signatures.
 
-provider = AgentNode(name="GPU_Provider")
-provider.start(port=50052)
+Negotiation: Task requirements and settlement terms (price, SLA, network) are agreed upon.
 
-```
+Execution & Release: Provider executes the inference/task, verifies execution with DID proof, and triggers payment release.
 
-### 2. Consumer Node
+Roadmap
+[x] Core SDK & gRPC Protocol Specification
 
-```python
-from agentos import AgentNode
+[x] Ed25519 Cryptographic Verification
 
-consumer = AgentNode(name="Task_Consumer")
-session = consumer.connect("localhost:50052")
+[x] CrewAI & Local Ollama Integration Specifications
 
-# Initiates negotiation and automated streaming
-session.negotiate(target_price=10.0)
+[x] Payment Settlement Protocol Schema
 
-```
+[ ] Hosted Agent Registry (Global Agent DNS)
 
-## Protocol Architecture
+[ ] Production Escrow Smart Contracts (Solana / Base)
 
-```
-[Consumer Node] <--- Handshake (DID Authentication) ---> [Provider Node]
-[Consumer Node] <--- Multi-Round Dynamic Bargaining ---> [Provider Node]
-[Consumer Node] <=== Bidirectional Data Streaming  ===> [Provider Node]
-
-```
-
-## License
-
-This project is open-source software licensed under the [MIT License](https://www.google.com/search?q=LICENSE).
+License
+Distributed under the MIT License. See LICENSE for more information.
